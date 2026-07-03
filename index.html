@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TFC Osmium Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <h1>TFC Osmium Finder</h1>
+      <p>Seed와 중심 좌표, 반경을 입력하면 가까운 Osmium 좌표를 찾아줍니다.</p>
+    </section>
+
+    <section class="panel">
+      <div class="form-grid">
+        <label><span>Seed</span><input id="seed" type="text" value="5948385397029245575" autocomplete="off" /></label>
+        <label><span>Center X (Block)</span><input id="centerX" type="text" value="0" autocomplete="off" /></label>
+        <label><span>Center Z (Block)</span><input id="centerZ" type="text" value="0" autocomplete="off" /></label>
+        <label><span>Search Radius (Blocks)</span><input id="radius" type="text" value="5000" autocomplete="off" /></label>
+        <label><span>Maximum Results (0 = All)</span><input id="maxResults" type="text" value="200" autocomplete="off" /></label>
+      </div>
+
+      <div class="actions">
+        <button id="findButton" type="button">Find Osmium</button>
+        <button id="clearButton" type="button" class="secondary">Clear</button>
+        <button id="downloadButton" type="button" class="secondary hidden">Download CSV</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="panel results-panel">
+      <div class="results-header"><h2>Results</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Distance</th><th>Block X</th><th>Block Z</th></tr>
+          </thead>
+          <tbody id="resultsBody">
+            <tr><td colspan="4" class="empty">No results yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
